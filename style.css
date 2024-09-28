@@ -1,0 +1,14 @@
+.mixinSass {
+  color: blue;
+  font-size: 4em;
+}
+.mixinSass:hover {
+  color: red;
+}
+
+.inheritedSass {
+  color: red;
+}
+.inheritedSass:hover {
+  color: green;
+}/*# sourceMappingURL=style.css.map */

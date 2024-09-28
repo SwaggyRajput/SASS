@@ -1,0 +1,60 @@
+//---------------------IMPORTS----------
+@import "variables";
+@import "mixin";
+// @use "_variables" as var  //variable can be accessed by var.variable_name
+
+// SASS Variables
+// $ht:300px;
+// $wd:300px;
+// $bgColor:green;
+$colors:red,green,blue; //Array can be passed in SASS and each element is separated by comma and index starts from 1
+
+//-------------------SASS-----------------------
+// .sass{
+//     height: $ht+100px;   //Operator in SASS
+//     width: $wd+100px;
+//     background-color: $bgColor;
+// }
+
+
+//-------------------Nested SASS-----------------------
+// .nestingSass{
+//     h1{
+//         color:red;
+//         &:hover{
+//             color: green;
+//         }
+//     }
+    
+//     p{
+//         color: blue;
+//     }
+// }
+
+
+//-----Mixin SASS with parameter-------
+@mixin newptag($color:red,$fontSize){
+    color: $color;
+    &:hover{
+        color: nth($colors,1);   //nth function with parameter as array variable and index
+    }
+    font-size: $fontSize;
+}
+// -------Include  mixin SASS----------
+.mixinSass{
+    @include newptag(blue,4em)
+}
+
+
+//-------------------Inheritance SASS-----------------------
+
+%custom{
+    color: red;
+    &:hover{
+        color: green;
+    }
+}
+.inheritedSass{
+    // @extend .mixinSass;   //Inherited css property from mixingSass class
+    @extend %custom;
+}
